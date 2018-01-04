@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "strings"
+)
 
 // Deck type 
 type deck []string 
@@ -21,6 +24,11 @@ func createDeck() deck {
 
 func dealCards(d deck, size int) (deck, deck) {
   return d[:size], d[size:]
+}
+
+func (d deck) str() string {
+  stringSlice := []string(d)
+  return strings.Join(stringSlice, ",")
 }
 
 func (d deck) printValues() {
