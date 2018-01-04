@@ -41,12 +41,15 @@ func (d deck) readFileAndCreateDeck(file string) deck {
   bs, err := ioutil.ReadFile(file,)
   if err != nil {
     fmt.Println("READ FILE ERROR: ", err)
-    io.Exit(1)
+    os.Exit(1)
   }
+  
+  s := strings.Split(string(bs), ",")
+  return deck(s)
 }
 
 func (d deck) printValues() {
   for _, card := range d {
-    fmt.Println(card)
+    fmt.Println(card, ",")
   }
 }
