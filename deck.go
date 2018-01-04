@@ -2,6 +2,7 @@ package main
 
 import (
   "fmt"
+  "io/ioutil"
   "strings"
 )
 
@@ -29,6 +30,10 @@ func dealCards(d deck, size int) (deck, deck) {
 func (d deck) str() string {
   stringSlice := []string(d)
   return strings.Join(stringSlice, ",")
+}
+
+func (d deck) saveFile(file string) error {
+  return ioutil.WriteFile(file, []byte(d.str()), 0777)
 }
 
 func (d deck) printValues() {

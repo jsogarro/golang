@@ -10,4 +10,6 @@ func main() {
     mainDeck.printValues()
     
     fmt.Println(cards.str())
+    
+    cards.saveFile("cards.txt")
 }
