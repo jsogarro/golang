@@ -14,5 +14,6 @@ func main() {
     cards.saveFile("cards.txt")
     
     newCards := cards.readFileAndCreateDeck("cards.txt")
+    newCards.shuffleDeck()
     newCards.printValues()
 }
