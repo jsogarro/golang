@@ -39,8 +39,8 @@ func (d deck) saveFile(file string) error {
   return ioutil.WriteFile(file, []byte(d.str()), 0777)
 }
 
-func (d deck) readFileAndCreateDeck(file string) deck {
-  bs, err := ioutil.ReadFile(file,)
+func readFileAndCreateDeck(file string) deck {
+  bs, err := ioutil.ReadFile(file)
   if err != nil {
     fmt.Println("READ FILE ERROR: ", err)
     os.Exit(1)
