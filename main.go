@@ -12,4 +12,7 @@ func main() {
     fmt.Println(cards.str())
     
     cards.saveFile("cards.txt")
+    
+    newCards := cards.readFileAndCreateDeck("cards.txt")
+    newCards.printValues()
 }
