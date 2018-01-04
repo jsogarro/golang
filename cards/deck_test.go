@@ -39,7 +39,7 @@ func TestSaveFileAndReadFileAndCreateDeck(t *testing.T) {
   }
 }
 
-func TestReadFileAndCreateDeck(t *testing.T) {
+func TestDealCards(t *testing.T) {
   // TODO: implement
 }
 
