@@ -11,19 +11,20 @@ func main() {
   
   e := echo.New()
   
+  // Group
   g := e.Group("/auth")
   
-  g.Use(middleware.BasicAuth(authMiddleware))
+  // Middlewares
+  g.Use(CreateHeaders)
+  g.Use(middleware.BasicAuth(AuthMiddleware))
   
+  // Group Routes
   g.GET("/basic", basicHandler, middleware.Logger())
   
-  // "/" represents the root URL.
-  e.GET("/", rootHandler, middleware.Logger())
-    
+  // Routes
+  e.GET("/", rootHandler, middleware.Logger())  
   e.GET("/users", getUsers, middleware.Logger())
-  
-  e.GET("/users/:userId", getUser, middleware.Logger())
-  
+  e.GET("/users/:userId", getUser, middleware.Logger())  
   e.POST("/users", createUser, middleware.Logger())
   
   // e.POST("/users/:userId", editUser)
