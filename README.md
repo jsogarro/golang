@@ -1,3 +1,3 @@
-# Intro to Go
+# Golang
 
-> Source Code for Intro to Go
+> Simple programs and web servers written in Go.
