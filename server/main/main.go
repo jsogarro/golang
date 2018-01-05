@@ -11,6 +11,12 @@ func main() {
   
   e := echo.New()
   
+  g := e.Group("/auth")
+  
+  g.Use(middleware.BasicAuth(authMiddleware))
+  
+  g.GET("/basic", basicHandler, middleware.Logger())
+  
   // "/" represents the root URL.
   e.GET("/", rootHandler, middleware.Logger())
     
