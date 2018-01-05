@@ -10,11 +10,11 @@ func main() {
   e := echo.New()
   
   // Middlewares
-  g := e.Group("/api/v1/")
+  g := e.Group("/gobot/api/v1/")
   
   // Routes
-  g.GET("/webhook", VerifyRequestHandler)
-  g.POSt("/webhook", SendMessageHandler)
+  g.GET("/verify", VerifyRequestHandler)
+  g.POSt("/message", SendMessageHandler)
 
   // Start the server.
   e.Start(":8000")
