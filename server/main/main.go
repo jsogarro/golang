@@ -15,6 +15,7 @@ func main() {
   g := e.Group("/auth")
   
   // Middlewares
+  g.Use(middleware.Recover())
   g.Use(CreateHeaders)
   g.Use(middleware.BasicAuth(AuthMiddleware))
   
