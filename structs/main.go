@@ -33,12 +33,21 @@ func main() {
       twitter: "jumpman23",
     },
   }
-  fmt.Printf("%+v", mj)
+  // fmt.Printf("%+v", mj)
 
   mj.sayName()
 
+  // Pass reference of our struct to editName method
+  (&mj).editName("Mike")
+
+  mj.sayName()
 }
 
 func (p person) sayName() {
   fmt.Printf("%+v", p.firstName)
+}
+
+func (p *person) editName(newName string) {
+  // dereference the pointer
+  (*p).firstName = newName
 }
