@@ -47,6 +47,10 @@ func main() {
   mjPointer := &mj
   mjPointer.setNickname("His Airness")
   mj.sayNickname()
+
+  // go passes the pointer for us by default
+  mj.updateHometown("Brooklyn")
+  fmt.Printf("%+v", mj.homeTown)
 }
 
 func (p person) sayName() {
@@ -64,4 +68,8 @@ func (p *person) editName(newName string) {
 
 func (p *person) setNickname(n string) {
   (*p).nickname = n
+}
+
+func (p *person) updateHometown(h string) {
+  (*p).homeTown = h
 }
